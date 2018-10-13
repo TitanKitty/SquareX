@@ -1,4 +1,4 @@
-var canvas, box, controller, loop, boxx, controllerx;
+var canvas, box, controller, loop, boxx;
 var width, height;
 
 canvas = document.querySelector("canvas").getContext("2d");
@@ -29,6 +29,10 @@ controller = {
   down:false,
   left:false,
   right:false,
+  upx:false,
+  downx:false,
+  leftx:false,
+  rightx:false,
   keyFunction:function(event) {
     var keyState = event.type == "keydown";
     switch(event.keyCode) {
@@ -44,29 +48,17 @@ controller = {
       case 39:
         controller.right = keyState;
         break;
-    }
-  }
-};
-
-controllerx = {
-  up:false,
-  down:false,
-  left:false,
-  right:false,
-  keyFunction:function(event) {
-    var keyState = event.type == "keydown";
-    switch(event.keyCode) {
       case 87:
-        controllerx.up = keyState;
+        controller.upx = keyState;
         break;
       case 83:
-        controllerx.down = keyState;
+        controller.downx = keyState;
         break;
       case 65:
-        controllerx.left = keyState;
+        controller.leftx = keyState;
         break;
       case 68:
-        controllerx.right = keyState;
+        controller.rightx = keyState;
         break;
     }
   }
@@ -86,7 +78,19 @@ loop = function() {
   if(controller.right) {
     box.x += 10;
   }
-  
+   if(controller.upx) {
+    boxx.y -= 10;
+  }
+  if(controller.downx) {
+    boxx.y += 10;
+  }
+  if(controller.leftx) {
+    boxx.x -= 10;
+  }
+  if(controller.rightx) {
+    boxx.x += 10;
+    
+  }
   if(box.y < 0) {
     box.y = 0;
   }
@@ -99,21 +103,6 @@ loop = function() {
   if(box.x > width) {
     box.x = -27;
   }
-  
-
-  if(controllerx.up) {
-    boxx.y -= 10;
-  }
-  if(controllerx.down) {
-    boxx.y += 10;
-  }
-  if(controllerx.left) {
-    boxx.x -= 10;
-  }
-  if(controllerx.right) {
-    boxx.x += 10;
-  }
-  
   if(boxx.y < 0) {
     boxx.y = 0;
   }
