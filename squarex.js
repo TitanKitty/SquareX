@@ -131,7 +131,7 @@ loop = function() {
   canvas.fillRect(0, 0, width, height);
   canvas.fillStyle = "#000080";
   canvas.fillRect(box.x, box.y, box.width, box.height);
-  canvas.fillStyle = "##ffffff";
+  canvas.fillStyle = "#ffffff";
   canvas.fillRect(boxx.x, boxx.y, boxx.width, boxx.height);
   
   window.requestAnimationFrame(loop);
