@@ -100,8 +100,6 @@ loop = function() {
     box.x = -27;
   }
   
-  
-loop = function() {
 
   if(controllerx.up) {
     boxx.y -= 10;
@@ -127,7 +125,7 @@ loop = function() {
   }
   if(boxx.x > width) {
     boxx.x = -27;
-  }
+  };
   
   canvas.fillStyle = "#293133";
   canvas.fillRect(0, 0, width, height);
