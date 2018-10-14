@@ -115,7 +115,7 @@ loop = function() {
   if(boxx.x > width) {
     boxx.x = -27;
   }
-  if(box.x, box.y, box.x + 27, box.y + 27 = boxx.x, boxx.y, boxx.x + 27, boxx.y + 27) {
+  if(box.x, box.y, box.x + 27, box.y + 27 === boxx.x, boxx.y, boxx.x + 27, boxx.y + 27) {
     canvas.fillStyle = "#8b0000";
     canvas.fillRect(0, 0, width, height);
   } else {
